@@ -37,7 +37,9 @@ const Cadastro = () => {
         const data = await response.json();
         if (data.status) {
           setMsgStatus('Cadastro realizado com SUCESSO!');
-          sessionStorage.setItem('isAuthenticated', 'true');
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem('isAuthenticated', 'true');
+          }
           setTimeout(() => {
             navigate.push('/routes/objetivos');
           }, 2500);

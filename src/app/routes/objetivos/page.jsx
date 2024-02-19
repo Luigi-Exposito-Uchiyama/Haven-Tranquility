@@ -7,7 +7,10 @@ const Objetivos = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (sessionStorage.getItem('isAuthenticated')) {
+    if (
+      typeof window !== 'undefined' &&
+      sessionStorage.getItem('isAuthenticated')
+    ) {
       router.refresh();
     }
   }, [router]);

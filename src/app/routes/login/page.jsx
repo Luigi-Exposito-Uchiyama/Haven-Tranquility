@@ -36,7 +36,9 @@ export default function Login() {
         const data = await response.json();
         if (data.status) {
           setMsgStatus('Login realizado com Sucesso!');
-          sessionStorage.setItem('isAuthenticated', 'true');
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem('isAuthenticated', 'true');
+          }
           setTimeout(() => {
             router.push('/routes/objetivos');
           }, 2500);

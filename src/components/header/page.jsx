@@ -8,12 +8,16 @@ export default function Header() {
   const router = useRouter();
 
   const handleLogout = () => {
-    sessionStorage.removeItem('isAuthenticated');
-    router.push('/');
-    router.refresh();
+    if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('isAuthenticated');
+      router.push('/');
+      router.refresh();
+    }
   };
 
-  const isAuthenticated = sessionStorage.getItem('isAuthenticated') === 'true';
+  const isAuthenticated =
+    typeof window !== 'undefined' &&
+    sessionStorage.getItem('isAuthenticated') === 'true';
 
   return (
     <div className={styles.header}>
