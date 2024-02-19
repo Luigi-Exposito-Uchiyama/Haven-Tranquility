@@ -591,8 +591,8 @@
     { "id": 99, "nome": "Bo Felix", "email": "bofelix@fiap.br", "senha": "et" },
     {
       "id": 100,
-      "nome": "luigi",
-      "email": "luigi_uchiyama@outlook.com",
+      "nome": "teste",
+      "email": "teste@teste.com",
       "senha": "a"
     }
   ]
